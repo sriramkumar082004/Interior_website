@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, Clock, ThumbsUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 import aboutDesigner from '../assets/about_interior_designer.png';
 
@@ -16,7 +17,13 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/20 rounded-full blur-xl"></div>
             <img 
               src={aboutDesigner} 
@@ -24,9 +31,14 @@ export default function About() {
               className="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[500px]"
             />
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary rounded-full -z-0 opacity-10"></div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h4 className="text-accent font-semibold uppercase tracking-wider mb-2">About Us</h4>
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Designing Spaces That Tell Your Story</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -47,7 +59,7 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

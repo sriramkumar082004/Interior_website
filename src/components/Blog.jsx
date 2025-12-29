@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, User, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Blog() {
   const blogs = [
@@ -40,8 +41,12 @@ export default function Blog() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog) => (
-            <div
+          {blogs.map((blog, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
               key={blog.id}
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
@@ -76,7 +81,7 @@ export default function Blog() {
                   Read More <ArrowRight size={16} className="ml-1" />
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

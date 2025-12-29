@@ -1,5 +1,6 @@
 import React from 'react';
 import {  Layout, Home, PenTool, BarChart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Services() {
   const services = [
@@ -35,10 +36,20 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, staggerChildren: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {services.map((service, index) => (
-            <div 
+            <motion.div 
               key={index} 
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 }
+              }}
               className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
             >
               <div className="mb-6 text-accent group-hover:scale-110 transition-transform duration-300 inline-block">
@@ -48,9 +59,9 @@ export default function Services() {
               <p className="text-gray-600 text-sm leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

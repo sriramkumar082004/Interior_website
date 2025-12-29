@@ -37,7 +37,7 @@ export default function Footer() {
 
           <div>
             <h4 className="text-lg font-semibold mb-4 text-accent">Follow Us</h4>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-8">
               <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-accent transition-colors">
                 <Facebook size={20} />
               </a>
@@ -51,6 +51,19 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
             </div>
+
+            <h4 className="text-lg font-semibold mb-4 text-accent">Newsletter</h4>
+            <form className="space-y-2" onSubmit={(e) => { e.preventDefault(); alert('Subscribed!'); }}>
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none text-white text-sm"
+                required
+              />
+              <button type="submit" className="w-full bg-accent hover:bg-yellow-600 text-white font-bold py-2 rounded-lg transition-colors text-sm">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
 

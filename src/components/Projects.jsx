@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
@@ -79,30 +80,40 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div 
-              key={project.id} 
-              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-            >
-              <div className="aspect-w-4 aspect-h-3 h-64 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="text-center p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-white text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-accent text-sm uppercase font-semibold tracking-wider">
-                    {project.category}
-                  </p>
+        <motion.div 
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <AnimatePresence>
+            {filteredProjects.map((project) => (
+              <motion.div 
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5 }}
+                key={project.id} 
+                className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
+              >
+                <div className="aspect-w-4 aspect-h-3 h-64 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="text-center p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-white text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-accent text-sm uppercase font-semibold tracking-wider">
+                      {project.category}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

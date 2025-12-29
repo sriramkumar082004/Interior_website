@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ onOpenQuote }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -25,7 +25,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -35,6 +35,12 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+            <button
+              onClick={onOpenQuote}
+              className="bg-primary hover:bg-gray-800 text-white px-5 py-2 rounded-full font-medium transition-colors duration-300"
+            >
+              Get a Quote
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -63,6 +69,15 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                onOpenQuote();
+              }}
+              className="w-full text-left px-3 py-2 text-base font-bold text-primary hover:text-accent hover:bg-gray-50 rounded-md"
+            >
+              Get a Quote
+            </button>
           </div>
         </div>
       )}

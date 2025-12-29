@@ -21,7 +21,7 @@ export default function About() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
             className="relative"
           >
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/20 rounded-full blur-xl"></div>
@@ -37,7 +37,7 @@ export default function About() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <h4 className="text-accent font-semibold uppercase tracking-wider mb-2">About Us</h4>
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Designing Spaces That Tell Your Story</h2>

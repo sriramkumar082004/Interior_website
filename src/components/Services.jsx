@@ -40,7 +40,7 @@ export default function Services() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, staggerChildren: 0.2 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {services.map((service, index) => (

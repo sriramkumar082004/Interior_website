@@ -52,7 +52,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-primary">Phone</h4>
-                  <p className="text-gray-600">+91 98765 43210</p>
+                  <a href="tel:+919360684091" className="text-gray-600 hover:text-accent transition-colors">
+                    +91 9360684091
+                  </a>
                 </div>
               </div>
 
@@ -62,7 +64,26 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-primary">Email</h4>
-                  <p className="text-gray-600">hello@luxeinteriors.in</p>
+                  <a href="mailto:sweetsriram02@gmail.com" className="text-gray-600 hover:text-accent transition-colors">
+                    sweetsriram02@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="bg-white p-3 rounded-full shadow-sm text-accent">
+                  <Send size={24} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-primary">Message</h4>
+                  <a 
+                    href="https://wa.me/919360684091" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-600 hover:text-accent transition-colors"
+                  >
+                    Chat on WhatsApp
+                  </a>
                 </div>
               </div>
 

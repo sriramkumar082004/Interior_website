@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden">
+    <section id="home" className="relative h-[100dvh] min-h-[600px] flex items-center justify-center bg-gray-900 text-white overflow-hidden">
       {/* Background Image Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40"

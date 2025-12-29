@@ -54,8 +54,8 @@ export default function QuoteModal({ isOpen, onClose }) {
             exit={{ opacity: 0, y: 100, scale: 0.9 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
           >
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden pointer-events-auto">
-              <div className="bg-primary p-6 flex justify-between items-center text-white">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto pointer-events-auto">
+              <div className="bg-primary p-6 flex justify-between items-center text-white sticky top-0 z-10">
                 <h3 className="text-2xl font-bold">Request a Quote</h3>
                 <button onClick={onClose} className="hover:bg-white/20 p-2 rounded-full transition-colors">
                   <X size={24} />

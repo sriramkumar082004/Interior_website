@@ -57,8 +57,8 @@ export default function Navbar({ onOpenQuote }) {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-white border-t max-h-[80vh] overflow-y-auto">
+          <div className="px-4 pt-4 pb-6 space-y-2 sm:px-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}

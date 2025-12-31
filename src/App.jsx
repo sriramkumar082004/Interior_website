@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import Testimonials from './components/Testimonials';
 import QuoteModal from './components/QuoteModal';
 import WhatsAppButton from './components/WhatsAppButton';
-import EmailButton from './components/EmailButton';
+
 
 function App() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
@@ -30,7 +30,7 @@ function App() {
       </main>
       <Footer />
       <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
-      <EmailButton />
+
       <WhatsAppButton />
     </div>
   );
